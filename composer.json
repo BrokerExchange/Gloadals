@@ -1,0 +1,16 @@
+{
+  "name": "brokerexchange/gloadals",
+  "description": "Load simple GLOBAL variables",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Sean Wahlstrom"
+    }
+  ],
+  "require": {},
+  "autoload": {
+    "psr-4": {
+      "BrokerExchange\\": "src"
+    }
+  }
+}
