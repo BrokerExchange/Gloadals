@@ -58,7 +58,7 @@ Gloadals::load( <PATH_TO_INI_FILE> . '/.gload.ini' );
 
 ## 5 - use the GLOBALS variables
 
-print_r($GLOBALS)
+print_r($GLOBALS);
 
 
 ```...
@@ -77,13 +77,6 @@ print_r($GLOBALS)
         )
 
     [scalar] => test_value4
-    
-        [LEVELONE] => Array
-            (
-                [LEVELTWO] => testing
-                [ANOTHER_LEVELTWO] => testing testing
-                [YET_ANOTHER_LEVELTWO] => testing 
-            )
             
     [multidimensional] => Array
         (
