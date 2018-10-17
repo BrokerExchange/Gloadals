@@ -52,7 +52,7 @@ final class Gloadals
     private static function ini()
     {
 
-        $ini = parse_ini_file(self::$gloadal_file_path);
+        $ini = parse_ini_file(self::$gloadal_file_path, true);
 
         foreach ($ini as $name => $value) {
 
