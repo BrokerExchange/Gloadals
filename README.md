@@ -33,10 +33,17 @@ require_once(<PATH_TO_VENDOR_DIRECTORY> . '/vendor/autoload.php' );
 ## 3 - Setup ini file ('.gload.ini')
 
 ```
+;simple (one level deep maximum)
 associative_array1[associative_index1] = "test_value1"  
 associative_array1[associative_index2] = test_value2  
 numeric_array1[] = "test_value3"  
-scalar = test_value4  
+scalar = test_value4
+
+;multidimensional (up to two levels deep maximum)
+[multidimensional]
+levelone[leveltwo] = "testing"
+levelone[another_leveltwo] = "testing testing"
+levelone[yet_another_leveltwo] = "testing"  
 ```
  
 ## 4 - use and load the Gloadals class
@@ -70,5 +77,23 @@ print_r($GLOBALS)
         )
 
     [scalar] => test_value4
+    
+        [LEVELONE] => Array
+            (
+                [LEVELTWO] => testing
+                [ANOTHER_LEVELTWO] => testing testing
+                [YET_ANOTHER_LEVELTWO] => testing 
+            )
+            
+    [multidimensional] => Array
+        (
+            [levelone] => Array
+                (
+                    [leveltwo] => testing
+                    [another_leveltwo] => testing testing
+                    [yet_another_leveltwo] => testing
+                )
+
+        )        
 )
 ```
