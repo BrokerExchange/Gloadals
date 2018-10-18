@@ -78,9 +78,15 @@ $scalar = [
 ```
 use BrokerExchange\Gloadals
 
-///
+.
+.
+.
  
+//(a) ini
 Gloadals::load( <PATH_TO_INI_FILE> . '/.gload.ini' );
+
+//(b) php
+Gloadals::load( <PATH_TO_FILE> . '/.gload.php', 'php');
 ```
 
 ## 5 - use the GLOBALS variables
