@@ -30,7 +30,7 @@ composer require brokerexchange/gloadals
 require_once(<PATH_TO_VENDOR_DIRECTORY> . '/vendor/autoload.php' );
 ```
 
-## 3 - Setup ini file ('.gload.ini')
+## 3 - option (a) - Setup ini file ('.gload.ini')
 
 ```
 ;simple (one level deep maximum)
@@ -45,6 +45,33 @@ levelone[leveltwo] = "testing"
 levelone[another_leveltwo] = "testing testing"
 levelone[yet_another_leveltwo] = "testing"  
 ```
+
+## 3 - option (b) - Setup php file ('.gload.php')
+
+```
+<?php
+
+/* Can load associative arrays many-levels deep */
+$associative_array = [
+    'a_name1' => 'a_value1',
+    'a_name2'=> 'a_value2',
+    'a_name3' => 'a_value3',
+    'a_name4' => [
+        'leveltwo' => [
+            'levelthree' => 'a_value4'
+        ]
+    ]
+];
+
+$numeric_array['n_name'] = ['value1','value2','value3'];
+
+$scalar = [
+    's_name1' => 's_value1',
+    's_name2' => 's_value2',
+    's_name3' => 's_value3'
+];
+```
+
  
 ## 4 - use and load the Gloadals class
 
@@ -58,9 +85,10 @@ Gloadals::load( <PATH_TO_INI_FILE> . '/.gload.ini' );
 
 ## 5 - use the GLOBALS variables
 
-print_r($GLOBALS);
+```print_r($GLOBALS);```
 
 
+(a) When loading via ini format:
 ```...
     .
     .
@@ -89,4 +117,34 @@ print_r($GLOBALS);
 
         )        
 )
+```
+
+(b) When loading via php format:
+```
+    [a_name1] => a_value1
+    [a_name2] => a_value2
+    [a_name3] => a_value3
+    [a_name4] => Array
+        (
+            [leveltwo] => Array
+                (
+                    [levelthree] => a_value4
+                )
+
+        )
+
+    [n_name] => Array
+        (
+            [0] => Array
+                (
+                    [0] => n_value1
+                    [1] => n_value2
+                    [2] => n_value3
+                )
+
+        )
+
+    [s_name1] => s_value1
+    [s_name2] => s_value2
+    [s_name3] => s_value3
 ```
