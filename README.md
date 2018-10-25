@@ -39,7 +39,7 @@ associative_array1[associative_index2] = test_value2
 numeric_array1[] = "test_value3"  
 scalar = test_value4
 
-;multidimensional (up to two levels deep maximum)
+;multidimensional (when using ini - up to two levels deep *maximum* and must be placed after all simple variables)
 [multidimensional]
 levelone[leveltwo] = "testing"
 levelone[another_leveltwo] = "testing testing"
