@@ -53,7 +53,7 @@ final class Gloadals
     private static function ini()
     {
 
-        $ini = parse_ini_file(self::$gloadal_file_path, true);
+        $ini = parse_ini_file(self::$gloadal_file_path, true, INI_SCANNER_TYPED);
 
         if(!empty($ini)){
             foreach ($ini as $name => $value) {
